@@ -70,7 +70,7 @@ a {
 /* Caption Styling */
 .carousel-caption {
     position: absolute;
-    bottom: 20px;
+    bottom: 15%;
     left: 0;
     right: 0;
     z-index: 10;
@@ -121,10 +121,7 @@ a {
         margin-top: 50%;
         z-index: 10; /* Ensure buttons are on top */
     }
-    #carousel-control-prev-new{
-        margin-bottom: 50%;
-        background-color: red;
-    }
+   
 }
 
 
@@ -681,31 +678,34 @@ a {
     }
 }
 
-/* Section with Fixed Background */
 .fixed-bg-section {
     position: relative;
-    height: 500px; /* Height for desktop */
-    background-image: url('../img/cover7.jpg'); /* Your background image */
-    background-size: contain; /* Ensures the entire image is visible */
-    background-attachment: fixed; /* Fixed position for parallax effect */
+    height: 500px;
+    background-image: url('../img/cover7.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden;
+    animation: zoomBackground 10s ease-in-out infinite alternate;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 767px) {
-    .fixed-bg-section {
-        height: 260px; /* Adjust height for smaller screens */
-        background-size: contain; /* Ensures the full image is still visible */
-    }
-   
+@keyframes zoomBackground {
+    0% { background-size: 100%; }
+    100% { background-size: 110%; }
 }
+
+
 
 @media (max-width: 580px) {
+
     .fixed-bg-section {
-        height: 250px; /* Smaller height for very small screens */
-        background-size: contain; /* Keep the image fully visible */
+        position: relative;
+        height: 400px;
+        background-image: url('../img/cover7.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: zoomBackground 10s ease-in-out infinite alternate;
+        margin-top: 5%;
     }
 
     /* Target the blockquote footer */
