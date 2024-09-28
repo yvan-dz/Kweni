@@ -1021,3 +1021,104 @@ a {
         display: block;
     }
 }
+
+@media (max-width: 380px) {
+    .services-small-screen {
+        height: 45vh;
+    }
+}
+
+/* Preloader Fullscreen */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #101010; /* Luxurious dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Spinning Diamond */
+.loader-diamond {
+    font-size: 80px;
+    color: #e0bfb8; /* Luxurious soft gold */
+    animation: spin 2s infinite cubic-bezier(0.5, 0.1, 0.5, 1);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        color: #e0bfb8;
+    }
+    50% {
+        transform: rotate(180deg);
+        color: #f5ecea;
+    }
+    100% {
+        transform: rotate(360deg);
+        color: #e0bfb8;
+    }
+}
+
+/* Loading Text Styling */
+.loading-text {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Falling Letters Animation */
+.letter {
+    opacity: 0;
+    transform: translateY(-200px); /* Letters start from above the screen */
+    animation: dropLetters 2s forwards ease-in-out;
+    animation-delay: calc(0.4s * var(--i)); /* Letters will fall sequentially */
+}
+
+.letter:nth-child(1) { --i: 0; }
+.letter:nth-child(2) { --i: 1; }
+.letter:nth-child(3) { --i: 2; }
+.letter:nth-child(4) { --i: 3; }
+.letter:nth-child(5) { --i: 4; }
+
+@keyframes dropLetters {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hiding the preloader after page load */
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Preloader Styles (as before) */
+body.loaded #preloader {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Main content should start hidden and fade in smoothly */
+main {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}

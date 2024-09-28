@@ -2,11 +2,13 @@ const canvas = document.getElementById('starry-bg');
 const ctx = canvas.getContext('2d');
 let stars = [];
 
+// Function to resize the canvas
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = document.querySelector('.fixed-bg-section').clientHeight;
 }
 
+// Create stars for the large screen
 function createStars() {
     const numberOfStars = 100;
     stars = [];
@@ -19,6 +21,7 @@ function createStars() {
     }
 }
 
+// Draw stars for large screen
 function drawStars() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (const star of stars) {
@@ -29,13 +32,12 @@ function drawStars() {
     }
 }
 
+// Animate stars for large screen
 function animateStars() {
     for (const star of stars) {
-        // Move the star down and to the right slightly
         star.y += star.speed;
         star.x += star.speed * 0.3;
 
-        // Reset stars when they move out of view
         if (star.y > canvas.height) {
             star.y = 0;
             star.x = Math.random() * canvas.width;
@@ -46,33 +48,29 @@ function animateStars() {
         }
     }
     drawStars();
-    requestAnimationFrame(animateStars); // Recursively call to keep animating
+    requestAnimationFrame(animateStars);
 }
 
+// Function to initialize the starry background for large screens
 function initStarryBackground() {
-    resizeCanvas(); // Adjust canvas size
-    createStars();  // Initialize stars
-    animateStars(); // Start the animation
+    resizeCanvas(); 
+    createStars();  
+    animateStars(); 
 }
 
-// Resize canvas on window resize
-window.addEventListener('resize', () => {
-    initStarryBackground();
-});
-
-window.onload = initStarryBackground;
-
-
+// Smaller screen starry background logic
 function initStarryBackgroundSmall() {
     const canvasSmall = document.getElementById('starry-bg-small');
     const ctxSmall = canvasSmall.getContext('2d');
     let starsSmall = [];
 
+    // Resize canvas for small screen
     function resizeCanvasSmall() {
         canvasSmall.width = window.innerWidth;
         canvasSmall.height = document.querySelector('.services-small-screen').clientHeight;
     }
 
+    // Create stars for small screen
     function createStarsSmall() {
         const numberOfStars = 100;
         starsSmall = [];
@@ -85,6 +83,7 @@ function initStarryBackgroundSmall() {
         }
     }
 
+    // Draw stars for small screen
     function drawStarsSmall() {
         ctxSmall.clearRect(0, 0, canvasSmall.width, canvasSmall.height);
         for (const star of starsSmall) {
@@ -95,6 +94,7 @@ function initStarryBackgroundSmall() {
         }
     }
 
+    // Animate stars for small screen
     function animateStarsSmall() {
         for (const star of starsSmall) {
             star.y += star.speed;
@@ -113,22 +113,43 @@ function initStarryBackgroundSmall() {
         requestAnimationFrame(animateStarsSmall);
     }
 
-    // Initialize the starry background on small screens
-    if (window.innerWidth <= 991) {
-        resizeCanvasSmall();
-        createStarsSmall();
-        animateStarsSmall();
+    // Initialize the starry background for small screens
+    resizeCanvasSmall();
+    createStarsSmall();
+    animateStarsSmall();
+}
+
+// Combined window onload to initialize both backgrounds
+window.onload = function () {
+    if (window.innerWidth > 991) {
+        initStarryBackground(); // Large screens
+    } else {
+        initStarryBackgroundSmall(); // Small screens
     }
 
     window.addEventListener('resize', () => {
-        if (window.innerWidth <= 991) {
-            resizeCanvasSmall();
-            createStarsSmall();
-            animateStarsSmall();
+        if (window.innerWidth > 991) {
+            initStarryBackground(); // Re-initialize for large screens
         } else {
-            ctxSmall.clearRect(0, 0, canvasSmall.width, canvasSmall.height);
+            initStarryBackgroundSmall(); // Re-initialize for small screens
         }
     });
-}
+};
 
-window.onload = initStarryBackgroundSmall;
+window.addEventListener('load', () => {
+    // Show preloader for 3 seconds, then load page smoothly
+    setTimeout(() => {
+        // Add a class to fade out preloader
+        document.body.classList.add('loaded');
+        
+        // Fade in the main content
+        document.querySelector('main').style.opacity = '1';
+
+        // Wait for the page to load, then initialize AOS
+        setTimeout(() => {
+            // Re-initialize AOS after the preloader is gone
+            AOS.refreshHard(); // This will forcefully reinitialize AOS to detect element visibility
+        }, 100); // Delay to ensure elements are visible before AOS refreshes
+    }, 4000); // Preloader duration (3 seconds)
+});
+
