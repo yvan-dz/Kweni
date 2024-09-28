@@ -20,6 +20,7 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
     
+    
 </head>
 <body>
 
@@ -200,9 +201,9 @@
 
 
 
-<!-- Video Background Section with Text -->
-<section class="video-bg-section">
-    <video autoplay muted loop playsinline class="background-video" >
+<!-- Section 1: Video Background (Visible on Small Screens) -->
+<section class="video-bg-section d-lg-none">
+    <video autoplay muted loop playsinline class="background-video">
         <source src="assets/videos/vid1.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
@@ -211,6 +212,19 @@
         <p>Avec nos collections haute couture, sublimez votre style.</p>
     </div>
 </section>
+
+<!-- Section 2: Fixed Background Image with Animated Stars -->
+<section class="fixed-bg-section d-none d-lg-block">
+    <canvas id="starry-bg"></canvas> <!-- Canvas for animated stars -->
+    <div class="photo-overlay">
+        <h2>Un style intemporel</h2>
+        <p>Plongez dans l'univers de la haute couture avec nos créations exclusives.</p>
+    </div>
+</section>
+
+
+
+
 
 
 
@@ -256,6 +270,18 @@
         <h2 class="font-weight-bold mb-4" data-aos="fade-down">Créations sur Mesure</h2>
         <p class="mb-5" data-aos="fade-right" data-aos-delay="200">Chez Kweni, chaque pièce est conçue spécialement pour vous.</p>
         <a href="#" class="btn btn-dark btn-lg" data-aos="zoom-in" data-aos-delay="400">Prendre un rendez-vous</a>
+    </div>
+</section>
+
+<!-- Services Section with Starry Background for Small Screens -->
+<section class="services-small-screen py-5 d-lg-none" data-aos="fade-up">
+    <canvas id="starry-bg-small"></canvas> <!-- Canvas for animated stars -->
+    <div class="service-overlay" data-aos="zoom-in" data-aos-delay="300">
+        <div class="container text-center">
+            <h2 class="font-weight-bold mb-4" data-aos="fade-down">Créations sur Mesure</h2>
+            <p class="mb-5" data-aos="fade-right" data-aos-delay="200">Chez Kweni, chaque pièce est conçue spécialement pour vous.</p>
+            <a href="#" class="btn btn-dark btn-lg" data-aos="zoom-in" data-aos-delay="400">Prendre un rendez-vous</a>
+        </div>
     </div>
 </section>
 
@@ -306,7 +332,7 @@
                 <div class="col-md-4"><img src="assets/img/img5.jpg" alt="Instagram 2" class="img-fluid rounded mb-4"></div>
                 <div class="col-md-4"><img src="assets/img/img6.jpg" alt="Instagram 3" class="img-fluid rounded mb-4"></div>
             </div>
-            <a href="#" class="btn btn-lg btn-outline-dark">Suivre sur Instagram</a>
+            <a href="#" class="btn btn-lg btn-outline-dark" id="insta">Suivre sur Instagram</a>
         </div>
     </section>
 
@@ -400,5 +426,7 @@
 </button>
 
     </body>
+
+    <script src="assets/js/script.js"></script>
     </html>
     
