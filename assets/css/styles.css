@@ -772,3 +772,37 @@ a {
     }
 }
 
+/* Scroll to Top Button */
+#scrollTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #b29477; /* Luxurious gold color */
+    color: white;
+    padding: 20px; /* Larger padding for bigger button */
+    border-radius: 50%; /* Fully rounded button */
+    font-size: 24px; /* Larger font size */
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for a lifted look */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    background-color: #a17a55; /* Darker gold on hover */
+    box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 480px) {
+    #scrollTopBtn {
+        padding: 15px; /* Smaller padding for mobile */
+        bottom: 20px; /* Adjust position */
+        right: 20px; /* Adjust position */
+        font-size: 18px; /* Smaller font for mobile */
+    }
+}
+
