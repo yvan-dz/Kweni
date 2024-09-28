@@ -1,0 +1,793 @@
+/* General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h1, h2, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    transition: color 0.3s ease;
+}
+
+/* Header */
+.luxury-header {
+    background-color: #333;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand .logo h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    color: #fff;
+}
+
+.nav-link {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.nav-link:hover {
+    color: #b29477;
+}
+
+.social-icons a {
+    color: #fff;
+}
+
+.social-icons a:hover {
+    color: #b29477;
+}
+
+
+
+/* General Settings for the Hero */
+.hero {
+    position: relative;
+    height: 70vh; /* Adjust the height for all carousels */
+    overflow: hidden;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: brightness(60%); /* Darken the images slightly for better text readability */
+}
+
+/* Caption Styling */
+.carousel-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+/* Controls Styling */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 15px;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: #b29477;
+}
+
+/* Custom transition for carousel items */
+.carousel-item {
+    transition: transform 1s ease, opacity 0.8s ease;
+}
+
+.carousel-caption .font-weight-bold{
+    font-size: 3rem;
+}
+
+/* Ensure the multi-photo carousel looks good on larger screens */
+@media (min-width: 992px) {
+    #multiPhotoCarousel .carousel-item img {
+        height: 60vh; /* Adjust the height for larger screens */
+        object-fit: cover;
+    }
+    .carousel-control-prev,
+.carousel-control-next {
+    z-index: 10; /* Ensure buttons are on top */
+}
+
+}
+
+@media (max-width: 767px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: block; /* Ensure they are visible on small screens */
+        margin-top: 50%;
+        z-index: 10; /* Ensure buttons are on top */
+    }
+    #carousel-control-prev-new{
+        margin-bottom: 50%;
+        background-color: red;
+    }
+}
+
+
+
+
+/* Introduction Section */
+.intro img {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.intro h2 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+}
+
+.intro p {
+    font-size: 1.3rem;
+    color: #666;
+}
+
+.intro a {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+}
+
+.intro a:hover {
+    background-color: #555;
+}
+
+/* Testimonial Carousel */
+.carousel-item blockquote {
+    font-size: 1.4rem;
+    font-family: 'Lora', serif;
+    color: #333;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #333;
+    border-radius: 50%;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #b29477;
+}
+
+   /* Target the blockquote footer */
+   .carousel-item blockquote footer.blockquote-footer {
+    font-size: 0.8rem; /* Reduce font size */
+    color: #b3b3b3; /* Lighter color to make it less prominent */
+    margin-top: 10px; /* Adjust the space above the footer */
+    font-style: italic; /* Optional: make the text italic */
+   padding-top: 15px;
+   padding-bottom: 15px;
+}
+
+
+
+
+/* Luxury Footer */
+.luxury-footer {
+    background-color: #101010; /* Deep dark background for elegance */
+    color: #f5f5f5; /* Soft white for a classy contrast */
+    padding: 50px 0;
+    border-top: 1px solid #b29477; /* Subtle luxurious gold border */
+    font-family: 'Lora', serif; /* Elegant, classic font */
+}
+
+/* Footer Links */
+.luxury-footer .footer-link {
+    color: #f5f5f5; /* Soft white for the footer links */
+    font-size: 1rem;
+    font-weight: 600; /* Slightly bold for importance */
+    letter-spacing: 0.05rem; /* Subtle spacing for a clean look */
+    transition: color 0.3s ease;
+}
+
+.luxury-footer .footer-link:hover {
+    color: #d4a582; /* Elegant soft gold on hover */
+    text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+/* Designer Credit */
+.designer-credit {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    font-style: italic; /* Italic for a softer, refined look */
+    color: #b3b3b3; /* Subtle gray for the credit text */
+}
+
+.designer-credit span {
+    color: #f5f5f5; /* Keep 'Conçu par' in soft white */
+}
+
+.designer-credit .designer-link {
+    color: #b29477; /* Gold color for 'Websnape' */
+    text-decoration: none;
+}
+
+.designer-credit .designer-link:hover {
+    color: #d4a582; /* Lighter gold on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .luxury-footer {
+        padding: 30px 0; /* Adjust padding for smaller screens */
+    }
+
+    .luxury-footer .footer-link {
+        font-size: 0.9rem;
+    }
+
+    .designer-credit {
+        font-size: 0.8rem; /* Adjust credit size for smaller screens */
+    }
+}
+
+
+
+/* Mobile phones (Portrait) - less than 576px */
+@media (max-width: 575.98px) {
+    body {
+        padding: 10px;
+        background-color: #f1f1f1;
+    }
+
+    /* Header */
+    .navbar-brand .logo h1 {
+        font-size: 2rem; /* Reduce logo size for small screens */
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        margin-right: 10px;
+    }
+
+    .hero {
+        height: 50vh; /* Reduce hero section height for smaller screens */
+    }
+
+    .carousel-caption h2 {
+        font-size: 2.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+
+    /* Introduction Section */
+    .intro h2 {
+        font-size: 2rem; /* Reduce font size for mobile */
+    }
+
+    .intro p {
+        font-size: 1.1rem;
+    }
+
+    .intro a {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    /* Testimonial Carousel */
+    .carousel-item blockquote {
+        font-size: 1rem;
+    }
+
+
+
+   
+}
+
+/* Mobile landscape and larger phones - between 576px and 767px */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .navbar-brand .logo h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.1rem;
+        margin-right: 15px;
+    }
+
+    .hero {
+        height: 60vh; /* Slightly taller hero section on larger phones */
+    }
+
+    .carousel-caption h2 {
+        font-size: 3rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1.2rem;
+    }
+
+    /* Introduction Section */
+    .intro h2 {
+        font-size: 2.8rem;
+    }
+
+    .intro p {
+        font-size: 1.2rem;
+    }
+
+    .intro a {
+        padding: 10px 25px;
+        font-size: 1.1rem;
+    }
+
+    /* Testimonial Carousel */
+    .carousel-item blockquote {
+        font-size: 1.2rem;
+    }
+
+}
+
+/* Tablets - between 768px and 991px */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .navbar-brand .logo h1 {
+        font-size: 2.8rem;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        margin-right: 20px;
+    }
+
+    .hero {
+        height: 65vh;
+    }
+
+    .carousel-caption h2 {
+        font-size: 3.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1.4rem;
+    }
+
+    /* Introduction Section */
+    .intro h2 {
+        font-size: 3.2rem;
+    }
+
+    .intro p {
+        font-size: 1.3rem;
+    }
+
+    .intro a {
+        padding: 12px 30px;
+        font-size: 1.2rem;
+    }
+
+    
+}
+
+/* Laptops and desktops - greater than 992px */
+@media (min-width: 992px) {
+    .hero {
+        height: 70vh; /* Full height hero section */
+    }
+
+    .carousel-caption h2 {
+        font-size: 4rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1.6rem;
+    }
+
+    /* Introduction Section */
+    .intro h2 {
+        font-size: 3.5rem;
+    }
+
+    .intro p {
+        font-size: 1.4rem;
+    }
+
+    .intro a {
+        padding: 14px 40px;
+        font-size: 1.3rem;
+    }
+
+    /* Testimonial Carousel */
+    .carousel-item blockquote {
+        font-size: 1.4rem;
+    }
+
+    
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 767.98px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 10%; /* Larger clickable area for mobile */
+        top: -90%; /* Ensure they stay centered */
+        height: 30px; /* Slightly smaller button for mobile */
+    }
+}
+
+/* Collaborations Section */
+.collaborations {
+    background-color: #fafafa; /* Soft background color for a clean look */
+    padding: 60px 0;
+    border: 1px solid #ddd; /* Light, subtle outer border */
+    border-radius: 12px; /* Softer rounded edges */
+}
+
+.collaborations h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #b29477; /* Elegant accent underline */
+    display: inline-block;
+}
+
+.collaborations p.lead {
+    font-size: 1.3rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6; /* Enhance readability */
+}
+
+/* Partner Logos */
+.partner-logo {
+    border-radius: 8px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #ddd; /* Clean, light borders */
+}
+
+.partner-logo:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Refined hover effect */
+    border-color: #b29477; /* Touch of luxury on hover */
+}
+
+/* Collaborations Description */
+.collab-description {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    color: #444;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Subtle box shadow */
+    text-align: left;
+    max-width: 900px;
+    margin: 40px auto;
+    border: 1px solid #ddd; /* Minimal, clean border */
+}
+
+.collab-description strong {
+    color: #b29477; /* Subtle highlight for important text */
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #f8f8f8; /* Clean, light background */
+    padding: 60px 0;
+    font-family: 'Lora', serif; /* Elegant font */
+    border-top: 2px solid #b29477; /* Luxurious gold accent */
+}
+
+.contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.contact-section h2::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    background-color: #b29477;
+    margin: 10px auto 0;
+}
+
+/* Form Styling */
+.contact-form .form-label {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.contact-form .form-control {
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: #b29477;
+    box-shadow: 0 0 5px rgba(178, 148, 119, 0.4); /* Soft gold glow on focus */
+}
+
+.contact-form textarea.form-control {
+    resize: none; /* Disable resizing for a cleaner look */
+}
+
+.btn-luxury {
+    background-color: #b29477;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.btn-luxury:hover {
+    background-color: #a17a55; /* Darker shade on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Luxurious shadow effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .contact-form .form-control {
+        font-size: 0.9rem;
+    }
+
+    .btn-luxury {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+
+
+/* Responsive Adjustments for 580px and below */
+@media (max-width: 580px) {
+    .collaborations h2 {
+        font-size: 1.8rem; /* Adjust heading size */
+    }
+
+    .collaborations p.lead {
+        font-size: 1.1rem; /* Adjust text size */
+        padding: 0 15px; /* Add padding for smaller screens */
+    }
+
+    .partner-logo {
+        width: 90%; /* Resize logos */
+        margin: 0 auto 20px;
+    }
+
+    .collab-description {
+        font-size: 1rem;
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
+
+/* Tablets and Smaller Laptops */
+@media (min-width: 581px) and (max-width: 767px) {
+    .collaborations h2 {
+        font-size: 2.6rem;
+    }
+
+    .collaborations p.lead {
+        font-size: 1.2rem;
+    }
+
+    .partner-logo {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .collab-description {
+        font-size: 1.1rem;
+        padding: 25px;
+    }
+}
+
+/* Section with Fixed Background */
+.fixed-bg-section {
+    position: relative;
+    height: 500px; /* Adjust based on content */
+    background-image: url('assets/img/background.jpg'); /* Your background image */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: 50%; /* Show 50% of the image at start */
+    overflow: hidden;
+}
+
+/* Content Overlay */
+.content-overlay {
+    position: relative;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay to enhance text readability */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.content-overlay h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.content-overlay p {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    max-width: 800px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .content-overlay h2 {
+        font-size: 2.2rem;
+    }
+
+    .content-overlay p {
+        font-size: 1rem;
+    }
+}
+
+/* Section with Fixed Background */
+.fixed-bg-section {
+    position: relative;
+    height: 500px; /* Height for desktop */
+    background-image: url('../img/cover7.jpg'); /* Your background image */
+    background-size: contain; /* Ensures the entire image is visible */
+    background-attachment: fixed; /* Fixed position for parallax effect */
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+    .fixed-bg-section {
+        height: 260px; /* Adjust height for smaller screens */
+        background-size: contain; /* Ensures the full image is still visible */
+    }
+   
+}
+
+@media (max-width: 580px) {
+    .fixed-bg-section {
+        height: 250px; /* Smaller height for very small screens */
+        background-size: contain; /* Keep the image fully visible */
+    }
+
+    /* Target the blockquote footer */
+.carousel-item blockquote footer.blockquote-footer {
+    font-size: 0.8rem; /* Reduce font size */
+    color: #b3b3b3; /* Lighter color to make it less prominent */
+    margin-top: 10px; /* Adjust the space above the footer */
+    font-style: italic; /* Optional: make the text italic */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+}
+
+/* Collections Section */
+.collections {
+    background-color: #333; /* Black background for luxury feel */
+    color: #fff; /* White text for contrast */
+    padding: 60px 0;
+}
+
+.collections h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.collections h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 2px;
+    background-color: #b29477; /* Luxurious gold accent */
+    margin: 10px auto 0;
+}
+
+.collections p {
+    color: #ccc; /* Soft gray text for descriptions */
+    font-size: 1.2rem;
+    margin-top: 15px;
+}
+
+.collections img {
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collections img:hover {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Luxurious shadow on hover */
+}
+
+/* Button Styling */
+.btn-outline-light {
+    color: #fff;
+    border: 2px solid #b29477; /* Gold border */
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: #b29477; /* Gold background on hover */
+    color: #000; /* Black text on hover */
+}
+
+/* Responsive Styling */
+@media (max-width: 767px) {
+    .collections h2 {
+        font-size: 2.5rem;
+    }
+
+    .collections p {
+        font-size: 1rem;
+    }
+
+    .btn-outline-light {
+        font-size: 1rem;
+    }
+}
+
